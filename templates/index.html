@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortner</title>
+</head>
+
+<body>
+    <h1> URL Shortner </h1>
+
+    {% from "macros/fields.jinja2" import render_text_field %}
+
+    <form name="url_shortner" method="post" novalidate>
+        {{ url_form.hidden_tag() }} {{ render_text_field(url_form.userinput_url) }} {{ url_form.submit(class="submit__button") }}
+    </form>
+
+    The shortened URL is:
+    <a href="{{ given_link }}"> {{ given_link }} </a>
+
+</body>
+
+</html>
