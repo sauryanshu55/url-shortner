@@ -43,7 +43,8 @@ def redirect_func(url_id: string):
         try:
             url_data = URLSchema(**load_url_data)
             return redirect(url_data.url)
-        except:
+        except error as e:
+            print("Error occured in loading shortened URL. Error: \n %s",e) 
             return render_template(
                 template_name_or_list="error_404.html",
                 error="An error occured in redirection"
